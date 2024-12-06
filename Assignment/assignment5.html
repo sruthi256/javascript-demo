@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return first and last name from a form </title>
+    <style>
+        input[type='text']{
+            width: 50%;
+        padding: 8px;
+        margin-top: 4px;    
+        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+        }
+        .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+ .box {
+
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10 20 50px rgb(164, 20, 20);
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+} 
+label {
+   color:rgb(177, 14, 41);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+table {
+        width: 50%;
+        border-style: solid;
+        margin-top: 40px;
+        margin-left: 312px;
+        box-sizing: border-box;
+       
+      }
+      th, td {
+        padding: 10px;
+        border: 1px solid #b1b913;
+        text-align: left;
+      }
+ 
+      th {
+        background-color: #f4f4f4;
+      }
+      td{
+        background-color: rgba(106, 196, 235, 0.397) ;
+      }
+      button {
+    padding: 10px;
+    background-color: #00e636;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ 
+button:hover {
+    background-color: #005bb5;
+}
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-family: cursive;">FORM FOR NAME DETAILS</h1>
+    <form id="nameform">
+        <div class="box">
+            <div class="form-group">
+            <label for="firstname">First Name :</label>
+            <input type="text"
+            id="firstname" >
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name :</label>
+            <input type="text"
+            id="lastname">
+        </div>
+        <button type="submit">Submit</button>
+        </div>
+       
+    </form>
+    <table id="dataTable">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be added here dynamically -->
+        </tbody>
+      </table>
+      <script>
+        document.getElementById("nameform").addEventListener("submit", function(event) {
+      event.preventDefault();
+     
+      const fname=document.getElementById("firstname").value;
+      const lname=document.getElementById("lastname").value;
+ 
+      const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+      const newRow = table.insertRow();
+ 
+      newRow.insertCell(0).textContent = fname;
+      newRow.insertCell(1).textContent = lname;
+ 
+      document.getElementById("nameform").reset();
+    });
+      </script>
+</body>
+</html>

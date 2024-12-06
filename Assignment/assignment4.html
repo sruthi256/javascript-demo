@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+</head>
+<body>
+</head>
+<body>
+    <h1 id="clock">Dynamic clock</h1>
+    <div id="clockblock"></div>
+    <script>
+        function clockstart(){
+            setInterval (() => {
+                const now=new Date(); // to get current date and time
+                const hours=String(now.getHours()).padStart(2,'0');
+                const mins=String(now.getMinutes()).padStart(2,'0');
+                const secs=String(now.getSeconds()).padStart(2,'0');
+ 
+                const timestr=`${hours} : ${mins} : ${secs}`;
+ 
+                const clockblock=document.getElementById("clockblock");
+                clockblock.innerHTML +=timestr + "<br>"; //to print next line every second we used div
+            }, 1000);
+        }
+ 
+        clockstart();
+    </script>
+</body>
+</html>

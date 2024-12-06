@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops in JS</title>
+</head>
+<body>
+    <script>
+        //declare class
+        class Employee{
+            //Encapsulation - declare private variable using #
+            #id;
+            #name;
+            #salary;
+
+            //constructor - initialises object properties
+            constructor (id,name,salary){
+                this.id =id;
+                this.name=name;
+                this.salary=salary;
+            }
+
+        //define methods
+        displayDetails(){
+            document.write("<br>***********************************");
+            document.write("<br>Employee ID     : "+this.id);
+            document.write("<br>Employee Name   : "+this.name);
+            this.salary =this.salary+(this.salary*.10);
+            document.write("<br>Employee Salary : "+this.salary);
+        }
+    }
+    //define objects
+    var e1 = new Employee(101,"MArtin Roy",5000);
+    var e2 = new Employee(102,"John doe",4000);
+    var e3 = new Employee(103,"duke williams",10000);
+
+    //invokes methods ofclass
+    e1.displayDetails();
+    e2.displayDetails();
+    e3.displayDetails();
+
+
+    </script>
+</body>
+</html>
